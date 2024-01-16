@@ -8,9 +8,6 @@
 
 import { strict as assert } from 'node:assert';
 
-const a = [[3, 1], [3, 1], [2, 2], [5, 10]]
-const b = [[1, 1], [2, 6], [4, 2], [1, 1], [4, 4], [1, 6]]
-
 const glue = (a: number[][], b: number[][]) => {
     const result = []
     let i = 0
@@ -59,9 +56,11 @@ const glue = (a: number[][], b: number[][]) => {
     return glued
 }
 
-// computational complexity O(n)
+// computational complexity O(время выполнения)
 // memory complexity O(n)
 
+const a = [[3, 1], [3, 1], [2, 2], [5, 10]]
+const b = [[1, 1], [2, 6], [4, 2], [1, 1], [4, 4], [1, 6]]
 assert.deepEqual(glue(a, b), [
         [ 1, 2 ],  [ 2, 7 ],
         [ 3, 3 ],  [ 1, 4 ],
@@ -70,3 +69,16 @@ assert.deepEqual(glue(a, b), [
     ]
 )
 
+
+// а вот такие условия убивают это решение :)
+// FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+const a1 = [[123456789234143134, 3], [987654321864764, 2]]
+const b1 = [[5, 2], [235145, 2], [154623475, 5]]
+
+// assert.deepEqual(glue(a1, b1), [
+//         [ 235150, 5 ],
+//         [ 154623475, 8 ],
+//         [ 123456789079284510, 3 ],
+//         [ 987654321864764, 2 ]
+//     ]
+// )
