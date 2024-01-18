@@ -5,6 +5,8 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 
 Input: strs = ["eat","tea","tan","ate","nat","bat"]
 Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+https://leetcode.com/problems/group-anagrams/
  */
 
 const groupAnagrams = (strs) => {
