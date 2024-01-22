@@ -1,21 +1,15 @@
 /* Развернуть односвязный список.
 
-Односвязный список - список, в котором есть ссылка только на следующий элемент.
+Односвязный список - список, в котором есть ссылка только на следующий элемент. Его ноду можно описать так:
+
+function ListNode(value, next) {
+    this.value = (value===undefined ? 0 : value)
+    this.next = (next===undefined ? null : next)
+}
 
 Input: 1->2->3->4->5->NULL
 Output: 5->4->3->2->1->NULL
 */
-
-/**
- * function ListNode(value, next) {
- *     this.value = (value===undefined ? 0 : value)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
 
 function reverse(head) {
 
