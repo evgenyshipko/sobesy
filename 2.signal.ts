@@ -22,7 +22,7 @@ const merge = (a: number[][], b: number[][]) => {
         if (timeA > timeB){
             a[i][0] -= timeB
             j++
-            if (result.length> 0 && result[result.length - 1][1] === sumAmpl){
+            if (result.length > 0 && result[result.length - 1][1] === sumAmpl){
                 result[result.length - 1][0] += timeB
                 continue
             }
